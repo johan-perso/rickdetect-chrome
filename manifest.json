@@ -1,0 +1,24 @@
+{
+	"name": "Rickdetect",
+	"description": "Bloquer les rick roll, grâce à Rickdetect pour Chrome.",
+	"version": "1.0.0",
+	"manifest_version": 3,
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["index.js"],
+		"run_at": "document_start"
+	}],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"icons": {
+		"698": "icon.png"
+	},
+	"permissions": ["storage"],
+	"web_accessible_resources": [
+		{
+			"resources": ["alertpage/rickroll.html"],
+			"matches": ["<all_urls>"]
+		}
+	]
+}
